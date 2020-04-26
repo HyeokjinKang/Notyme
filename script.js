@@ -169,7 +169,7 @@ const saveSchedule = () => {
         let settingTime = document.getElementById('dateInput').value.replace(/-/g, '') + document.getElementById('timeInput').value.replace(':', '');
         time = yyyymmdd(dateTime).replace(/-/g, '') + time;
         if(settingTime.replace(':', '') - time <= 0) {
-            alert('You have entered the same or earlier time.\n현재와 같거나 앞선 시간을 입력하였습니다.');
+            alert('You have entered the same or earlier time.');
         } else {
             if(check()) {
                 if(localStorage.reminders) {
@@ -186,11 +186,11 @@ const saveSchedule = () => {
                 sortReminders();
                 update();
             } else {
-                alert('There is a reminder with duplicate names or times.\n이름이나 시간이 중복되는 리마인더가 있습니다.');
+                alert('There is a reminder with duplicate names or times.');
             }
         }
     } else {
-        alert('Names can not be stored as spaces.\n이름은 공백으로 저장할 수 없습니다.');
+        alert('Names can not be stored as spaces.');
     }
 };
 
