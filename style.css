@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap');
+@import url('https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css');
+
+body {
+    font-family: 'Montserrat', 'Nanum Barun Gothic', arial;
+    margin: 0;
+    padding: 0;
+    background: #EEE;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+    /**Smoothing Text**/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-stroke: 0.45px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    font-family: 'Montserrat', '나눔바른고딕', '나눔고딕', arial;
+}
+
+#title {
+    background: linear-gradient(to bottom right, #4e9cf6, #7734e4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+#briefing {
+    background: linear-gradient(to bottom right, #18c29a, #5eb3e8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    font-weight: 200;
+}
+
+#overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#newOverlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#deleteOverlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#questionBox {
+    width: 40vw;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #EEE;
+    border-radius: 1vh;
+    box-shadow: 0 4px 10px rgbA(0,0,0,0.1);
+}
+
+#questionText {
+    font-size: 2em;
+    font-weight: 300;
+}
+
+#questionSubText {
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+}
+
+#nameBox {
+    border: none;
+    width: 10em;
+    height: 2em;
+    border-radius: 1em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    text-align: center;
+    transition-duration: .3s;
+}
+
+#nameBox:hover {
+    width: 10.5em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+#titleBox {
+    border: none;
+    width: 15em;
+    height: 2em;
+    border-radius: 1em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    text-align: center;
+    transition-duration: .3s;
+}
+
+#titleBox:hover {
+    width: 15.5em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+#dateInput {
+    margin-top: 7px;
+    border: none;
+    height: 2em;
+    border-radius: 1em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    text-align: center;
+    transition-duration: .3s;
+}
+
+#dateInput:hover {
+    transform: scaleX(1.05);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+#timeInput {
+    margin-top: 7px;
+    border: none;
+    height: 2em;
+    border-radius: 1em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    text-align: center;
+    transition-duration: .3s;
+}
+
+#timeInput:hover {
+    transform: scaleX(1.05);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+#cancelBtn {
+    cursor: pointer;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+#submitBtn {
+    margin-top: 1em;
+    width: 5em;
+    height: 2em;
+    border-radius: 5px;
+    background-color: #FFF;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    transition-duration: .3s;
+}
+
+#submitBtn:hover {
+    width: 5.5em;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+#topDisplayBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    transition-delay: 1s;
+    transition-duration: 2s;
+}
+
+#alertGrantBox {
+    opacity: 1;
+    padding: 0.5em;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100vw;
+    background-color: #999;
+    color: white;
+    transition-duration: 1s;
+    margin-bottom: 3vh;
+}
+
+#alertGrant {
+    text-align: center;
+}
+
+#alertBtn {
+    margin-top: 5px;
+    border: none;
+    background-color: white;
+    padding: 7px 15px 7px 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+    transition-duration: .3s;
+}
+
+#alertBtn:hover {
+    padding: 7px 20px 7px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.7);
+}
+
+#notiElementsContainer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.notiElement {
+    text-align: left;
+    padding: 2em;
+    margin-top: 4em;
+    background-color: #fff;
+    width: 70vw;
+    height: 7em;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition-duration: .3s;
+    cursor: pointer;
+}
+
+.notiElement:hover {
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+.notiElementBottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.notiElementName {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #333;
+}
+
+.notiElementTime {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #333;
+}
+
+.notification {
+    font-size: 1.5em;
+    margin-right: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+.chkbox {
+    transform: scale(1.2);
+}
+
+#newSchedule {
+    cursor: pointer;
+    background: linear-gradient(to bottom right, #4e9cf6, #7734e4);
+    font-size: 3em;
+    color: white;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    border-radius: 50%;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.5);
+    font-weight: 400;
+    transition-duration: .3s;
+}
+
+#newSchedule:hover {
+    box-shadow: 0 3px 8px rgba(0,0,0,0.7);
+}

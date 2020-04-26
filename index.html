@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Notyme</title>
+</head>
+<body>
+    <div id="overlay">
+        <div id="questionBox">
+            <span id="questionText">Welcome!</span>
+            <span id="questionSubText">For a better experience, please let me know your short name.</span>
+            <input type="text" id="nameBox" placeholder="Short name">
+            <input type="button" id="submitBtn" onclick="nameSubmit()" value="Save">
+        </div>
+    </div>
+    <div id="newOverlay">
+        <div id="questionBox">
+            <span id="questionText">New Schedule</span>
+            <span id="questionSubText">Please provide the title, date, and time of the reminder.</span>
+            <input type="text" id="titleBox" placeholder="Title">
+            <input type="date" id="dateInput" min="2019-01-01">
+            <input type="time" id="timeInput" value="12:00">
+            <input type="button" id="submitBtn" onclick="saveSchedule()" value="Save">
+            <a onclick="cancelSchedule()" id="cancelBtn">Cancel</a>
+        </div>
+    </div>
+    <div id="deleteOverlay">
+            <div id="questionBox">
+                <span id="questionText">Delete Schedule</span>
+                <span id="questionSubText">Do you really want to delete the reminder? This action cannot be undone.</span>
+                <input type="button" id="submitBtn" onclick="deleteReminder()" value="Delete">
+                <a onclick="cancelDelete()" id="cancelBtn">Cancel</a>
+            </div>
+        </div>
+    <div id="topDisplayBox">
+        <span id="title">Hi, there!</span>
+    </div>
+    <div id="alertGrantBox">
+        <span id="alertGrant">You must agree to the Notification permission to use the service.</span>
+        <input type="button" id="alertBtn" onclick="alertGrant()" value="I understand">
+    </div>
+    <span id="briefing">What's the plan today?</span>
+    <div id="notiElementsContainer">
+    </div>
+    <br><br><br><br>
+    <a onclick="newSchedule()" id="newSchedule">+</a>
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if ((navigator.appName == 'Netscape' && agent.indexOf('trident') != -1) || (agent.indexOf("msie") != -1)) {
+            alert('This service does not work properly with Internet Explorer.\n이 서비스는 Internet Explorer에서 정상작동 하지 않습니다.');
+            alert('Please use a different browser such as Chrome or Firefox.\nChrome 또는 Firefox등의 다른 브라우저를 이용해주세요.');
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
