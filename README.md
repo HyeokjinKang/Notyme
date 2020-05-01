@@ -2,7 +2,7 @@
 ![Notyme](./images/header.png)
 > To-Do and schedule notification? Notyme!
 
-https://cp.croissant.tech/projects/notyme/
+https://coupy.dev/projects/notyme/
 
 ## Features
 ![example](./images/example_main.png)
